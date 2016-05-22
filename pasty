@@ -1,0 +1,15 @@
+#!/bin/bash
+
+PB_ORIG=$(pbpaste)
+
+while :; do
+
+	PB_CHECK=$(pbpaste)
+
+	if [ "$PB_CHECK" != "$PB_ORIG" ]; then
+  		echo "$PB_CHECK"
+  		PB_ORIG=$PB_CHECK
+	fi
+
+	sleep 0.1
+done;
